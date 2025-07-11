@@ -120,14 +120,47 @@ react-handson/
 ## 🛠️ 開発環境
 
 ### 前提条件
+- **Git** がインストールされていること
 - **Node.js 22** がインストールされていること
 - **npm** または **yarn** がインストールされていること
 - **VSCode** （推奨）
 
+### Git のインストール
+
+#### Windows
+1. **Git for Windows** をダウンロード
+   - https://git-scm.com/download/win
+   - インストーラーを実行してデフォルト設定でインストール
+
+2. **確認方法**
+   ```bash
+   git --version
+   ```
+
+#### macOS
+1. **Homebrew を使用**（推奨）
+   ```bash
+   # Homebrew のインストール（未インストールの場合）
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   
+   # Git のインストール
+   brew install git
+   ```
+
+2. **または Xcode Command Line Tools**
+   ```bash
+   xcode-select --install
+   ```
+
+3. **確認方法**
+   ```bash
+   git --version
+   ```
+
 ### 環境構築
 ```bash
 # 1. リポジトリをクローン
-git clone <repository-url>
+git clone https://github.com/WataruNishimura/react-handson.git
 cd react-handson
 
 # 2. Node.js 22 を使用（mise使用の場合）
