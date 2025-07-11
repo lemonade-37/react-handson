@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Mock bulletin board API server",
+  "dependencies": {
+    "@hono/node-server": "^1.15.0",
+    "better-sqlite3": "^12.2.0",
+    "hono": "^4.8.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

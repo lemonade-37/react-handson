@@ -1,0 +1,587 @@
+/* レイアウト */
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #646cff;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  color: inherit;
+  font-size: 1rem;
+}
+
+/* 投稿フォーム */
+.new-post-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.new-post-container h2 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  color: #646cff;
+}
+
+.new-post-container textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.new-post-container textarea:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.new-post-container button {
+  background-color: #646cff;
+  color: white;
+}
+
+.new-post-container button:hover {
+  background-color: #535bf2;
+}
+
+/* 投稿リスト */
+.posts-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #646cff;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.post:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.post-author {
+  font-weight: 600;
+  color: #646cff;
+}
+
+.post-date {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+.post-content {
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.like-btn,
+.comment-btn,
+.delete-btn {
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.like-btn.liked {
+  background-color: rgba(255, 0, 100, 0.2);
+  border-color: rgba(255, 0, 100, 0.5);
+  color: rgba(255, 0, 100, 0.9);
+}
+
+.like-btn:hover:not(:disabled) {
+  background-color: rgba(255, 0, 100, 0.1);
+}
+
+.like-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.like-btn.liked:disabled {
+  background-color: rgba(255, 0, 100, 0.3);
+  border-color: rgba(255, 0, 100, 0.6);
+  color: rgba(255, 0, 100, 1);
+}
+
+.comment-btn:hover {
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+.delete-btn {
+  margin-left: auto;
+  border-color: rgba(255, 100, 100, 0.3);
+}
+
+.delete-btn:hover {
+  background-color: rgba(255, 100, 100, 0.2);
+  border-color: rgba(255, 100, 100, 0.5);
+}
+
+/* ページネーション */
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination-info {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  min-width: 40px;
+  font-size: 0.9rem;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: rgba(100, 108, 255, 0.2);
+  border-color: #646cff;
+}
+
+.pagination-button:disabled {
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-button.active {
+  background: #646cff;
+  color: white;
+  border-color: #646cff;
+}
+
+/* 状態表示 */
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.success-message {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+/* トランジション効果 */
+.transition-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.post-loading,
+.pagination-loading {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* モーダルのスタイル */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #646cff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.comments-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  max-height: 300px;
+}
+
+.comment {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #646cff;
+  font-size: 0.9rem;
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.comment-content {
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.new-comment {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.new-comment textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.new-comment textarea:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.new-comment button {
+  font-size: 0.9em;
+  padding: 0.5em 1em;
+  background-color: #646cff;
+  color: white;
+}
+
+.new-comment button:hover {
+  background-color: #535bf2;
+}
+
+/* スケルトン表示 */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-author {
+  width: 120px;
+}
+
+.skeleton-date {
+  width: 80px;
+}
+
+.skeleton-line {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-line-short {
+  width: 60%;
+}
+
+.skeleton-button {
+  height: 2rem;
+  width: 60px;
+  border-radius: 6px;
+}
+
+.skeleton-delete {
+  margin-left: auto;
+  width: 50px;
+}
+
+.skeleton-pagination-info {
+  width: 150px;
+  height: 1rem;
+  margin: 0 auto;
+}
+
+.skeleton-pagination-btn {
+  width: 40px;
+  height: 2rem;
+  border-radius: 4px;
+}
+
+.post-skeleton {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.post-skeleton .post-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .app {
+    padding: 0.5rem;
+  }
+
+  .post {
+    padding: 1rem;
+  }
+
+  .post-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pagination-controls {
+    gap: 0.25rem;
+  }
+
+  .pagination-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 36px;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: light) {
+  .subtitle {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .post,
+  .comment {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  .new-post-container {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  .new-post-container textarea,
+  .new-comment textarea {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-content {
+    background-color: #ffffff;
+    color: #213547;
+  }
+
+  .modal-header {
+    background-color: #f9f9f9;
+  }
+
+  .close-btn {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .close-btn:hover {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .pagination-info {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .pagination-button {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.03);
+    color: #213547;
+  }
+
+  .pagination-button:hover:not(:disabled) {
+    background: rgba(100, 108, 255, 0.1);
+    border-color: #646cff;
+  }
+
+  .pagination-button:disabled {
+    color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .empty {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  header {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* ライトモード用のスケルトン */
+  .skeleton {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 75%);
+    background-size: 200% 100%;
+  }
+
+  .post-skeleton {
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}

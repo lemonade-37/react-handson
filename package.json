@@ -1,0 +1,20 @@
+{
+  "name": "react-handson",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "vanilla-js",
+    "vanilla-js-example",
+    "react-simple",
+    "react-simple-example"
+  ],
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:vanilla": "cd vanilla-js && npm run dev",
+    "dev:vanilla-example": "cd vanilla-js-example && npm run dev",
+    "dev:simple": "cd react-simple && npm run dev",
+    "dev:simple-example": "cd react-simple-example && npm run dev",
+    "dev:powerful": "cd react-powerful && npm run dev",
+    "dev:powerful-example": "cd react-powerful-example && npm run dev"
+  }
+}
