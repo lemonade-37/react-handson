@@ -12,6 +12,7 @@ import {
   getPostById,
 } from './data/dummyData.js';
 import './App.css';
+import { formatDate } from './utils/date.js';
 
 function App() {
   const [posts, setPosts] = useState([]);
