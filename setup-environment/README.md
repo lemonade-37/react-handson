@@ -434,8 +434,7 @@ npx vite
 ### ブラウザでの確認
 
 1. ブラウザで `http://localhost:5173/` にアクセス
-2. Reactのロゴが回転する画面が表示されることを確認
-3. "Edit `src/App.jsx` and save to test HMR" のメッセージを確認
+2. ReacとViteのロゴが表示されることを確認
 
 ### Hot Module Replacement（HMR）の確認
 
