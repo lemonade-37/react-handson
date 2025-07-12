@@ -128,36 +128,7 @@ function App() {
             onDelete={handleDelete}
           />
 
-          {pagination.totalPages > 1 && (
-            <div className="pagination">
-              <div className="pagination-info">
-                {pagination.totalCount}件中{' '}
-                {(pagination.page - 1) * pagination.limit + 1}-
-                {Math.min(
-                  pagination.page * pagination.limit,
-                  pagination.totalCount
-                )}
-                件を表示
-              </div>
-              <div className="pagination-controls">
-                <button
-                  onClick={() => handlePageChange(pagination.page - 1)}
-                  disabled={!pagination.hasPrev}
-                >
-                  前へ
-                </button>
-                <span className="page-info">
-                  {pagination.page} / {pagination.totalPages}
-                </span>
-                <button
-                  onClick={() => handlePageChange(pagination.page + 1)}
-                  disabled={!pagination.hasNext}
-                >
-                  次へ
-                </button>
-              </div>
-            </div>
-          )}
+          <Pagination pagination={pagination} onPageChange={handlePageChange} />
         </div>
 
         {selectedPost && (
@@ -227,7 +198,6 @@ function App() {
             </div>
           </div>
         )}
-        <Pagination pagination={pagination} onPageChange={handlePageChange} />
       </main>
     </div>
   );
