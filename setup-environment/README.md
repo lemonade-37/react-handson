@@ -112,7 +112,7 @@ if (!(Test-Path -Path $PROFILE)) {
 }
 
 # プロファイルにmise設定を追加
-Add-Content -Path $PROFILE -Value 'Invoke-Expression (&mise activate powershell)'
+Add-Content -Path $PROFILE -Value 'Invoke-Expression (&mise activate pwsh | Out-String)'
 
 # プロファイルの再読み込み
 . $PROFILE
