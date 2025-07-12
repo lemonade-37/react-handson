@@ -123,12 +123,35 @@ Add-Content -Path $PROFILE -Value 'Invoke-Expression (&mise activate pwsh | Out-
 echo 'mise activate fish | source' >> ~/.config/fish/config.fish
 ```
 
+#### Git Bash（Windows）
+```bash
+# Git Bashプロファイルにmise設定を追加
+echo 'eval "$(mise activate bash)"' >> ~/.bashrc
+
+# プロファイルの再読み込み
+source ~/.bashrc
+```
+
 ### インストール確認
+
+#### Linux/macOS
 ```bash
 # バージョン確認
 mise --version
 
 # 利用可能な言語/ツールの確認
+mise ls-remote
+
+# Node.js の利用可能バージョン確認
+mise ls-remote node
+```
+
+#### Windows (PowerShell)
+```powershell
+# バージョン確認
+mise --version
+
+# 利用可能な言語/ツールの確認 
 mise ls-remote
 
 # Node.js の利用可能バージョン確認
@@ -150,6 +173,23 @@ Node.js 22は2024年4月にリリースされた最新のメジャーバージ�
 - improved performance hooks
 - WebAssembly のコンパイル時最適化
 
+#### Linux/macOS
+```bash
+# Node.js 22のインストール
+mise install node@22
+
+# 利用可能なNode.js 22のバージョン確認
+mise ls-remote node | grep "^22\."```
+
+#### Windows (PowerShell)
+```powershell
+# Node.js 22のインストール
+mise install node@22
+
+# 利用可能なNode.js 22のバージョン確認
+mise ls-remote node | Select-String "^22\."```
+
+#### Windows (Git Bash)
 ```bash
 # Node.js 22のインストール
 mise install node@22
@@ -160,6 +200,7 @@ mise ls-remote node | grep "^22\."
 
 ### グローバル設定
 
+#### Linux/macOS/Windows 共通
 ```bash
 # システム全体でNode.js 22をデフォルトに設定
 mise use --global node@22
@@ -170,13 +211,19 @@ node --version  # v22.x.x が表示されることを確認
 npm --version
 ```
 
+**注意**: Windows環境では、PowerShellまたはGit Bashの使用を推奨します。
+
 ### プロジェクト固有の設定
 
 **このプロジェクトルートには既に `.tool-versions` ファイルが配置されており、Node.js 22が指定されています。**
 
 ```bash
 # プロジェクトディレクトリに移動
+# Linux/macOS
 cd /path/to/react-handson
+
+# Windows (PowerShell/Git Bash)
+cd C:/path/to/react-handson
 
 # 自動的にNode.js 22が適用される（mise shell統合が有効な場合）
 node --version  # v22.x.x が表示されることを確認
@@ -434,11 +481,21 @@ npm run preview
 **解決方法**:
 ```bash
 # パスの確認
+# Linux/macOS/Git Bash
 echo $PATH
 
+# Windows PowerShell
+$env:PATH
+
 # シェル設定の再読み込み
-source ~/.zshrc  # zshの場合
-source ~/.bashrc # bashの場合
+# macOS (zsh)
+source ~/.zshrc
+
+# Linux/Git Bash
+source ~/.bashrc
+
+# Windows PowerShell
+. $PROFILE
 
 # miseの再インストール
 ```
@@ -453,7 +510,11 @@ source ~/.bashrc # bashの場合
 mise doctor
 
 # 手動でシェルを再起動
+# Linux/macOS/Git Bash
 exec $SHELL
+
+# Windows PowerShell
+powershell
 
 # または新しいターミナルを開く
 ```
@@ -468,7 +529,11 @@ exec $SHELL
 npm cache clean --force
 
 # node_modules と package-lock.json の削除
+# Linux/macOS/Git Bash
 rm -rf node_modules package-lock.json
+
+# Windows PowerShell
+Remove-Item -Recurse -Force node_modules, package-lock.json
 
 # 再インストール
 npm install
@@ -497,6 +562,9 @@ npm run dev -- --port 3000
 ```powershell
 # システム環境変数の確認
 $env:PATH
+
+# PATHの区切り文字で分割して表示
+$env:PATH -split ';'
 
 # miseのパスを手動追加
 $env:PATH += ";C:\Users\[ユーザー名]\.local\bin"

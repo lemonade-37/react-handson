@@ -82,42 +82,7 @@ react-handson/
     └── package.json
 ```
 
-## 🎯 学習パス
-
-あなたの目標に合わせて選んでください：
-
-### 🔧 開発環境から始めたい方
-**[setup-environment/](./setup-environment/)** から始めてください
-- Node.js 22 のインストール
-- mise によるバージョン管理
-- Vite プロジェクトの作成
-- 基本的なコマンドライン操作
-
-### ⚛️ React をシンプルに初めて触る方
-**[react-simple/](./react-simple/)** から始めてください
-- React Hooks (useState, useEffect)
-- コンポーネント設計
-- Props とイベントハンドリング
-- 状態管理の基本
-- **完成例**: [react-simple-example/](./react-simple-example/)
-
-### 🚀 React 19 の新機能を触りたい方
-**[react-powerful/](./react-powerful/)** から始めてください
-- React Server Components
-- useOptimistic による楽観的更新
-- Server Actions
-- ⚠️ **注意**: 非常に不安定です
-- 実験的な機能のため、エラーが発生する可能性があります
-- **完成例**: [react-powerful-example/](./react-powerful-example/)
-
-### 📝 JavaScript だけで試してみたい方
-**[vanilla-js/](./vanilla-js/)** から始めてください
-- DOM操作とイベント処理
-- モジュール化とコンポーネント設計
-- 状態管理パターン
-- **完成例**: [vanilla-js-example/](./vanilla-js-example/)
-
-## 🛠️ 開発環境
+## 🛠️ 開発環境のセットアップ
 
 ### 前提条件
 - **Git** がインストールされていること
@@ -157,7 +122,7 @@ react-handson/
    git --version
    ```
 
-### 環境構築
+### 環境構築が正常にできているか確認
 ```bash
 # 1. リポジトリをクローン
 git clone https://github.com/WataruNishimura/react-handson.git
@@ -173,7 +138,7 @@ npm install
 npm run dev:backend
 ```
 
-### 利用可能なコマンド
+### 利用可能なコマンド（覚えておいてください）
 ```bash
 # バックエンド
 npm run dev:backend         # APIサーバー起動
@@ -233,6 +198,42 @@ npm run dev:simple
 ### 複数ターミナルの使い方
 - `Ctrl + Shift + ` で新しいターミナルを作成
 - バックエンドとフロントエンドを同時に起動するため、2つのターミナルが必要です
+
+
+## 🎯 学習パス
+
+あなたの目標に合わせて選んでください：
+
+### 🔧 開発環境から始めたい方
+**[setup-environment/](./setup-environment/)** から始めてください
+- Node.js 22 のインストール
+- mise によるバージョン管理
+- Vite プロジェクトの作成
+- 基本的なコマンドライン操作
+
+### ⚛️ React をシンプルに初めて触る方
+**[react-simple/](./react-simple/)** から始めてください
+- React Hooks (useState, useEffect)
+- コンポーネント設計
+- Props とイベントハンドリング
+- 状態管理の基本
+- **完成例**: [react-simple-example/](./react-simple-example/)
+
+### 🚀 React 19 の新機能を触りたい方
+**[react-powerful/](./react-powerful/)** から始めてください
+- React Server Components
+- useOptimistic による楽観的更新
+- Server Actions
+- ⚠️ **注意**: 非常に不安定です
+- 実験的な機能のため、エラーが発生する可能性があります
+- **完成例**: [react-powerful-example/](./react-powerful-example/)
+
+### 📝 JavaScript だけで試してみたい方
+**[vanilla-js/](./vanilla-js/)** から始めてください
+- DOM操作とイベント処理
+- モジュール化とコンポーネント設計
+- 状態管理パターン
+- **完成例**: [vanilla-js-example/](./vanilla-js-example/)
 
 ## 🎯 次のステップ
 
