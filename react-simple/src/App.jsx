@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PostForm from './components/PostForm.jsx';
 import PostList from './components/PostList.jsx';
+import Pagination from './components/Pagination.jsx';
 import { setLiked, removeLiked, isLiked } from './utils/storage.js';
 import {
   getPaginatedPosts,
@@ -225,6 +226,7 @@ function App() {
             </div>
           </div>
         )}
+        <Pagination pagination={pagination} onPageChange={handlePageChange} />
       </main>
     </div>
   );
