@@ -1,3 +1,5 @@
+このハンズオンを進めるためには [`vanilla-js`](.) フォルダに移動する必要があります。
+
 # Vanilla JavaScript - SNS App 実装ガイド
 
 ## プロジェクト概要
@@ -1380,3 +1382,5 @@ async function loadPosts(page = state.pagination.page) {
 - **Breakpoint**: debugger文の活用
 
 このガイドに従って段階的に実装することで、Vanilla JavaScript を使用した本格的なWebアプリケーションの開発スキルを身につけることができます。
+
+[← プロジェクトトップに戻る](../README.md)

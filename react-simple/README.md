@@ -1,3 +1,5 @@
+このハンズオンを進めるためには [`react-simple`](.) フォルダに移動する必要があります。
+
 # React Simple - SNS App 実装ガイド
 
 ## プロジェクト概要
@@ -1433,3 +1435,5 @@ const loadPosts = async (page = currentPage) => {
 - **ES6+**: モダンなJavaScript機能の活用
 
 このガイドに従って段階的に実装することで、React を使用した本格的なWebアプリケーションの開発スキルを身につけることができます。
+
+[← プロジェクトトップに戻る](../README.md)

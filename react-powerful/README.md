@@ -1,3 +1,5 @@
+このハンズオンを進めるためには [`react-powerful`](.) フォルダに移動する必要があります。
+
 # React Server Components ハンズオン
 
 > **⚠️ 注意**: このプロジェクトは実験的な React Server Components の実装です。非常に不安定で、エラーが発生する可能性があります。
@@ -622,3 +624,5 @@ export async function serverAction() {
 ---
 
 **Happy Coding with React Server Components! 🚀**
+
+[← プロジェクトトップに戻る](../README.md)
